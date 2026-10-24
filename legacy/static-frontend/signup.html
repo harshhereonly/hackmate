@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up • HackMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a class="brand" href="index.html">
+        <span class="brand-logo" aria-hidden="true">⚡</span>
+        <span class="brand-name">HackMate</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="button button-secondary" href="login.html">Login</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-card">
+      <h1>Create an account</h1>
+      <p class="subtitle">Join HackMate to start matching with teammates and projects.</p>
+
+      <form class="auth-form" novalidate>
+        <div class="form-group">
+          <label for="signup-email">Email</label>
+          <input id="signup-email" name="email" type="email" autocomplete="email" required />
+          <p class="error-message" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input id="signup-password" name="password" type="password" autocomplete="new-password" required minlength="8" />
+          <p class="error-message" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-confirm">Confirm password</label>
+          <input id="signup-confirm" name="confirmPassword" type="password" autocomplete="new-password" required minlength="8" />
+          <p class="error-message" aria-live="polite"></p>
+        </div>
+
+        <button type="submit" class="button button-primary button-large">Create account</button>
+        <p class="success-message" role="status">Account created! (demo only)</p>
+
+        <p class="auth-footer">
+          Already have an account? <a href="login.html">Log in</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

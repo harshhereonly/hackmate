@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects • HackMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a class="brand" href="index.html">
+        <span class="brand-logo" aria-hidden="true">⚡</span>
+        <span class="brand-name">HackMate</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="find.html">Find</a>
+        <a class="nav-link" href="requests.html">Requests</a>
+        <a class="button button-secondary" href="profile.html">Profile</a>
+        <a class="button button-primary" href="login.html">Logout</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="projects-page">
+    <section class="projects-hero">
+      <div class="container">
+        <h1>Browse Active Projects</h1>
+        <p class="subtitle">Find projects that match your skills and interests. Teams are looking for talented developers like you!</p>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <div class="container">
+        <div class="projects-header">
+          <h2>Available Projects</h2>
+          <button class="button button-primary" id="create-project-btn">+ Create Project</button>
+        </div>
+        <div class="projects-grid" id="projects-grid">
+          <!-- Projects will be loaded here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Create Project Modal -->
+  <div class="modal" id="create-project-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Create a New Project</h2>
+        <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      
+      <form class="create-form" id="create-project-form">
+        <div class="form-group">
+          <label for="project-title">Project Title</label>
+          <input id="project-title" name="title" type="text" placeholder="e.g., AI Task Manager" required />
+        </div>
+
+        <div class="form-group">
+          <label for="project-description">Description</label>
+          <textarea id="project-description" name="description" rows="4" placeholder="Describe your project idea and goals..." maxlength="500" required></textarea>
+          <small class="char-count">0/500</small>
+        </div>
+
+        <div class="form-group">
+          <label for="project-skills">Skills Needed (comma separated)</label>
+          <input id="project-skills" name="skills" type="text" placeholder="e.g., JavaScript, React, Node.js" required />
+        </div>
+
+        <div class="form-group">
+          <label for="project-teamsize">Team Size Needed</label>
+          <select id="project-teamsize" name="teamSize" required>
+            <option value="">Select team size</option>
+            <option value="2">2 members</option>
+            <option value="3">3 members</option>
+            <option value="4">4 members</option>
+            <option value="5">5 members</option>
+            <option value="6">6+ members</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="button button-secondary" id="cancel-btn">Cancel</button>
+          <button type="submit" class="button button-primary">Create Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="projects.js"></script>
+</body>
+</html>

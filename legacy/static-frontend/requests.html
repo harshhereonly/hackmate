@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Requests • HackMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a class="brand" href="index.html">
+        <span class="brand-logo" aria-hidden="true">⚡</span>
+        <span class="brand-name">HackMate</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="find.html">Find</a>
+        <a class="nav-link" href="requests.html">Requests</a>
+        <a class="button button-secondary" href="profile.html">Profile</a>
+        <a class="button button-primary" href="login.html">Logout</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="requests-page">
+    <section class="requests-hero">
+      <div class="container">
+        <h1>Join Requests</h1>
+        <p class="subtitle">Review requests from developers who want to join your projects.</p>
+      </div>
+    </section>
+
+    <section class="requests-section">
+      <div class="container">
+        <div class="requests-tabs">
+          <button class="tab-btn tab-active" data-filter="pending">Pending</button>
+          <button class="tab-btn" data-filter="accepted">Accepted</button>
+          <button class="tab-btn" data-filter="rejected">Rejected</button>
+        </div>
+
+        <div class="requests-container" id="requests-container">
+          <!-- Requests will be loaded here -->
+        </div>
+
+        <div class="empty-state" id="empty-state" style="display: none;">
+          <div class="empty-icon">📭</div>
+          <h3>No requests yet</h3>
+          <p>When developers request to join your projects, they'll appear here.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="requests.js"></script>
+</body>
+</html>

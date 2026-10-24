@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login • HackMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a class="brand" href="index.html">
+        <span class="brand-logo" aria-hidden="true">⚡</span>
+        <span class="brand-name">HackMate</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="button button-secondary" href="signup.html">Sign Up</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-card">
+      <h1>Welcome back</h1>
+      <p class="subtitle">Log in to find your next hackathon teammates.</p>
+
+      <form class="auth-form" novalidate>
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" required />
+          <p class="error-message" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required minlength="8" />
+          <p class="error-message" aria-live="polite"></p>
+        </div>
+
+        <button type="submit" class="button button-primary button-large">Continue</button>
+        <p class="success-message" role="status">Login successful! (demo only)</p>
+
+        <p class="auth-footer">
+          New here? <a href="signup.html">Create an account</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

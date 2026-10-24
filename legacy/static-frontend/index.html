@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HackMate • Find Your Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a class="brand" href="#">
+        <span class="brand-logo" aria-hidden="true">⚡</span>
+        <span class="brand-name">HackMate</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="#how-it-works">How it Works</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="find.html">Find</a>
+        <a class="nav-link" href="profile.html">Profile</a>
+        <a class="button button-secondary" href="login.html">Login</a>
+        <a class="button button-primary" href="signup.html">Sign Up</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Find Hackathon Teammates Fast.</h1>
+          <p>Connect with students and developers who share your skills, interests, and project goals. Build your dream team in minutes.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="find.html">Find Teammates</a>
+            <a class="button button-secondary" href="#how-it-works">How it Works</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="illustration">
+            <div class="illustration-card">👥</div>
+            <div class="illustration-card">💡</div>
+            <div class="illustration-card">🚀</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container">
+        <h2>Features</h2>
+        <p class="subtitle">Everything you need to find, connect, and launch your next project.</p>
+
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">🔍</div>
+            <h3>Match by Skills</h3>
+            <p>Search for teammates based on programming languages, tools, and domain expertise.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">🧠</div>
+            <h3>Interest-Based Groups</h3>
+            <p>Find collaborators who share the same hackathon goals and project passions.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">⚙️</div>
+            <h3>Project Matchmaking</h3>
+            <p>Create and join project pitches, then build a team with the right mix of skills.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">💬</div>
+            <h3>Built-in Chat</h3>
+            <p>Start a conversation immediately with teammates and coordinate your next steps.</p>
+          </article>
+        </div>
+
+        <div class="cta-block">
+          <a class="button button-primary button-large" href="#find">Find Teammates</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <h2>How It Works</h2>
+        <ol class="steps">
+          <li>
+            <strong>Create a profile.</strong> Share your skills, interests, and what you're building.
+          </li>
+          <li>
+            <strong>Browse matches.</strong> See teammates and project ideas that align with you.
+          </li>
+          <li>
+            <strong>Connect and collaborate.</strong> Chat, organize, and start building quickly.
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">
+          <span class="brand-logo" aria-hidden="true">⚡</span>
+          <strong>HackMate</strong>
+        </p>
+        <p class="footer-copy">A platform for hackathon teams and project collaborators.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it Works</a>
+        <a href="login.html">Login</a>
+      </div>
+
+      <div class="footer-cta">
+        <p>Ready to build your team?</p>
+        <a class="button button-primary" href="#find">Find Teammates</a>
+      </div>
+    </div>
+    <p class="footer-small">© 2026 HackMate. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle?.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      navLinks.classList.toggle('nav-open');
+    });
+  </script>
+</body>
+</html>

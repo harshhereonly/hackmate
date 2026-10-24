@@ -1,0 +1,16 @@
+# HackMate API runtime dependencies (direct dependencies, pinned).
+# Verified together on Python 3.14.4 (Windows). The code supports Python 3.11+.
+# For a byte-for-byte reproduction of the tested environment, use requirements.lock.
+fastapi==0.162.0
+uvicorn[standard]==0.54.0
+pydantic==2.14.1
+pydantic-settings==2.16.1
+email-validator==2.3.0
+pymongo==4.19.0
+argon2-cffi==25.1.0
+PyJWT==2.15.1
+httpx2==2.16.0
+python-multipart==0.0.32
+pillow==13.0.0
+# Development-only in-memory database (USE_IN_MEMORY_DB=true) and the test suite.
+mongomock==4.3.0

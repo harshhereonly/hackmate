@@ -1,0 +1,127 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+/*
+ * HackMate design tokens.
+ * Carried over from the original prototype: deep navy background, violet
+ * #6c63ff accent and Inter, toned down to flat surfaces with subtle borders.
+ * Text colours are chosen for WCAG AA contrast on the surface colours.
+ */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Cascadia Code", Menlo, monospace;
+
+  --color-bg: #0b0f1f;
+  --color-surface: #11162a;
+  --color-surface-2: #161c33;
+  --color-surface-3: #1d2442;
+  --color-line: #232a45;
+  --color-line-strong: #333c60;
+
+  --color-fg: #e8ebf5;
+  --color-muted: #a3abc6;
+  --color-subtle: #7c86a2;
+
+  --color-brand-200: #d4d1ff;
+  --color-brand-300: #b9b4ff;
+  --color-brand-400: #8f88ff;
+  --color-brand-500: #6c63ff;
+  --color-brand-600: #5b52ef;
+  --color-brand-700: #4a42d6;
+
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+  --color-info: #60a5fa;
+
+  --animate-shimmer: shimmer 1.6s ease-in-out infinite;
+  --animate-fade-in: fade-in 160ms ease-out;
+  --animate-pop-in: pop-in 180ms ease-out;
+
+  @keyframes shimmer {
+    0% { opacity: 0.55; }
+    50% { opacity: 1; }
+    100% { opacity: 0.55; }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes pop-in {
+    from { opacity: 0; transform: translateY(6px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply min-h-screen bg-bg font-sans text-fg antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  ::selection {
+    background: rgb(108 99 255 / 0.35);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-400);
+    outline-offset: 2px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-balance tracking-tight;
+  }
+}
+
+/* Surface used by cards, panels and list rows. */
+@utility card {
+  @apply rounded-xl border border-line bg-surface;
+}
+
+@utility card-interactive {
+  @apply rounded-xl border border-line bg-surface transition-colors duration-150 hover:border-line-strong hover:bg-surface-2;
+}
+
+/* Shared input skin so native inputs, selects and textareas match. */
+@utility field {
+  @apply block w-full rounded-lg border border-line bg-surface-2 px-3 py-2 text-sm text-fg placeholder:text-subtle transition-colors duration-150 outline-none hover:border-line-strong focus:border-brand-400 focus:ring-2 focus:ring-brand-500/25 disabled:cursor-not-allowed disabled:opacity-60;
+
+  &[aria-invalid="true"] {
+    @apply border-danger/70 focus:border-danger focus:ring-danger/20;
+  }
+}
+
+@utility link {
+  @apply font-medium text-brand-300 underline-offset-4 hover:text-brand-200 hover:underline;
+}
+
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.12em] text-brand-300;
+}
+
+@utility skeleton {
+  @apply animate-shimmer rounded-md bg-surface-3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
